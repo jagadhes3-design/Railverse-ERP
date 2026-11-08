@@ -2,3 +2,12 @@
 .hint{color:#65758a;font-size:13px;line-height:1.5}.report-summary{margin-top:18px;font-size:13px;line-height:1.7;color:#43536a}.report-summary p{margin:8px 0}
 
 .stats .stat-link{cursor:pointer;transition:transform .15s,border-color .15s}.stats .stat-link:hover,.stats .stat-link:focus{border-color:#1768ac;transform:translateY(-2px);outline:2px solid #d5e9fa}.panel hr{border:0;border-top:1px solid #e5ebf1;width:100%;margin:22px 0}.panel .quick{margin:4px 0 12px}
+
+#rv-bottom{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px max(8px,env(safe-area-inset-bottom));background:#fff;border-top:1px solid #dfe6ee;box-shadow:0 -4px 18px #142b4a12}
+#rv-bottom button{border:0;background:transparent;color:#506178;display:flex;flex-direction:column;align-items:center;gap:4px;font:600 10px system-ui;padding:3px 1px}
+#rv-bottom svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+main{padding-bottom:100px}.rv-calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin-top:14px}.rv-week{text-align:center;color:#718096;font-size:10px;padding:5px 0}
+.rv-day{border:1px solid #e2e8f0;background:#f8fafc;border-radius:8px;min-height:48px;padding:4px 1px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#64748b}.rv-day small{font-size:10px}.rv-day b{font-size:12px}
+.rv-p{background:#e4f6eb!important;color:#16743b!important;border-color:#a9dfbc!important}.rv-a{background:#fde8e8!important;color:#b42318!important;border-color:#f3b5b5!important}.rv-off{background:#edf0f4!important;color:#596579!important;border-color:#d3d9e2!important}
+.rv-legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;font-size:11px;font-weight:700}.rv-legend span{padding:5px 8px;border-radius:6px}
+html[data-rv-theme="dark"] body{background:#101827;color:#e7edf5}html[data-rv-theme="dark"] .panel,html[data-rv-theme="dark"] .card,html[data-rv-theme="dark"] #rv-bottom{background:#1c293b;color:#e7edf5;border-color:#34445a}html[data-rv-theme="dark"] nav{background:#1c293b}html[data-rv-theme="dark"] input,html[data-rv-theme="dark"] select{background:#142033;color:#e7edf5;border-color:#46566c}html[data-rv-theme="dark"] #rv-bottom button{color:#d5dfeb}
