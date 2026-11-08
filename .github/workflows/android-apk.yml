@@ -55,6 +55,8 @@ jobs:
           </adaptive-icon>
           EOF
           done
+      - name: Configure RVS launcher and home-screen shortcut
+        run: python3 scripts/configure-android-launcher.py
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
