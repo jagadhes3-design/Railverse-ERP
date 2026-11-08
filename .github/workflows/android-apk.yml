@@ -64,6 +64,18 @@ jobs:
       - name: Build debug APK
         working-directory: android
         run: ./gradlew assembleDebug
+      - name: Verify APK package, launcher and RVS icon
+        working-directory: android
+        run: |
+          APK=app/build/outputs/apk/debug/app-debug.apk
+          test -s "$APK"
+          AAPT="$(find "$ANDROID_HOME/build-tools" -type f -name aapt | sort | tail -n 1)"
+          test -n "$AAPT"
+          "$AAPT" dump badging "$APK" > /tmp/rvs-apk-badging.txt
+          grep -q "package: name='com.railverse.signallingworks'" /tmp/rvs-apk-badging.txt
+          grep -q "application-label:'RVS ERP'" /tmp/rvs-apk-badging.txt
+          grep -q "launchable-activity:" /tmp/rvs-apk-badging.txt
+          unzip -l "$APK" | grep -q 'ic_launcher'
       - uses: actions/upload-artifact@v4
         with:
           name: railverse-android-debug-apk
