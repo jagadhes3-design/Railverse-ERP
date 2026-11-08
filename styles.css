@@ -80,3 +80,6 @@ html[data-rv-theme="dark"] body{background:#101827;color:#e7edf5}html[data-rv-th
 .login-card{text-align:left}
 
 .rv-search-label{margin:0 0 14px;display:block}.rv-search-label input{border-radius:12px;background:#f1f1f8;border:0;padding:14px 16px;font-size:14px}
+
+/* Match the compact mobile navigation in the supplied attendance-app reference */
+@media(max-width:650px){#tabs{display:none!important}#rv-bottom{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;padding:8px 8px max(8px,env(safe-area-inset-bottom));background:#f8f8fd}#rv-bottom button{min-height:58px;border-radius:17px;padding:7px 3px;font-size:10px}#rv-bottom button.active{background:#dfe4ff;color:#10102b;font-weight:800}#rv-bottom svg{width:23px;height:23px}body{background:#f8f8fd;color:#1c1c27}header{background:#100f29}main{padding-bottom:112px}}
