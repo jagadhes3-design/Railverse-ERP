@@ -4,8 +4,7 @@
     const n=Number(value);
     return Number.isFinite(n)?Math.round(n*100):0;
   }
-  function summarizeCashbook(rows, employeeId){
-    const selected=(Array.isArray(rows)?rows:[]).filter(r=>employeeId===undefined||r.employeeId===employeeId);
+  function summarizeOne(selected){
     let advances=0,payments=0,recovered=0,invalidEntries=0;
     for(const row of selected){
       const amount=toCents(row.amount);
@@ -15,14 +14,17 @@
       else if(row.type==='Recovery')recovered+=amount;
     }
     const rawBalance=advances-recovered;
-    return {
-      advances:advances/100,
-      payments:payments/100,
-      recovered:recovered/100,
-      outstanding:Math.max(0,rawBalance)/100,
-      excessRecovery:Math.max(0,-rawBalance)/100,
-      invalidEntries
-    };
+    return {advances:advances/100,payments:payments/100,recovered:recovered/100,
+      outstanding:Math.max(0,rawBalance)/100,excessRecovery:Math.max(0,-rawBalance)/100,invalidEntries};
+  }
+  function summarizeCashbook(rows, employeeId){
+    const all=Array.isArray(rows)?rows:[];
+    if(employeeId!==undefined)return summarizeOne(all.filter(r=>r.employeeId===employeeId));
+    const groups=new Map();
+    for(const row of all){const key=row.employeeId??'__missing_employee__';if(!groups.has(key))groups.set(key,[]);groups.get(key).push(row)}
+    const totals={advances:0,payments:0,recovered:0,outstanding:0,excessRecovery:0,invalidEntries:0};
+    for(const group of groups.values()){const value=summarizeOne(group);for(const key of Object.keys(totals))totals[key]+=value[key]}
+    return totals;
   }
   function materialBalance(received,used){
     const r=toCents(received),u=toCents(used);
