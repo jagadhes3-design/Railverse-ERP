@@ -1,7 +1,7 @@
 /* Spreadsheet-inspired registers for Rail verse signalling works ERP */
 .heading{margin-bottom:12px}
 #list-staff.list,#list-projects.list{display:grid;grid-template-columns:1fr;gap:8px}
-#list-staff .card{display:grid;grid-template-columns:minmax(150px,1.3fr) minmax(110px,1fr) minmax(130px,1fr) auto auto;align-items:center;gap:8px 14px;padding:12px 14px;border-radius:9px;box-shadow:none;border-color:#dce5ef;border-left:4px solid #258b86}
+#list-staff .card{display:grid;grid-template-columns:minmax(150px,1.3fr) minmax(110px,1fr) minmax(130px,1fr) auto auto auto;align-items:center;gap:8px 14px;padding:12px 14px;border-radius:9px;box-shadow:none;border-color:#dce5ef;border-left:4px solid #258b86}
 #list-staff .card b,#list-staff .card small{margin:0;min-width:0;overflow-wrap:anywhere}
 #list-staff .card small:nth-of-type(1){color:#51647b}
 #list-staff .card small:nth-of-type(2){color:#176b68;font-weight:700}
@@ -25,3 +25,21 @@
 }
 html[data-rv-theme="dark"] #list-staff .card,html[data-rv-theme="dark"] #list-projects .rv-project-card{background:#1c293b;border-color:#34445a}
 html[data-rv-theme="dark"] .rv-search-label input{background:#142033;color:#e7edf5;border-color:#46566c}
+
+/* Labour actions must never overlap on small screens */
+#list-staff .card .rv-edit-record{background:#e5f1ff;color:#145c9b;font-weight:800;border-radius:8px;padding:9px 12px}
+#list-staff .card [data-rv-open]{background:#eef2ff;color:#4b50a3;border-radius:8px;padding:9px 12px}
+#list-staff .card button.del{background:#fff0f0;color:#b42318;border-radius:8px;padding:9px 12px}
+.rv-cash-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:12px 0 22px}
+.rv-cash-summary .card{padding:13px;min-width:0}
+.rv-cash-summary .card b{display:block;font-size:18px;margin-top:6px;overflow-wrap:anywhere}
+.rv-cash-employee .rv-cash-balance-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.rv-cash-balance-grid>span{background:#f3f6fb;border-radius:9px;padding:9px}
+.rv-cash-balance-grid small{display:block;color:#718096;font-size:10px}
+.rv-cash-balance-grid b{display:block;font-size:14px;margin-top:3px}
+.rv-cash-actions,.rv-cash-row-actions{display:flex;gap:9px;flex-wrap:wrap}
+.rv-cash-row-actions button{border:0;border-radius:8px;padding:8px 12px;background:#e8f2fb;color:#1768ac;font-weight:750}
+.rv-cash-row-actions button.del{background:#fff0f0;color:#b42318}
+.rv-att-day-summary{grid-template-columns:repeat(6,minmax(0,1fr))}
+@media(max-width:650px){.rv-cash-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.rv-cash-summary .card b{font-size:16px}.rv-att-day-summary{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:420px){#list-staff .card .rv-edit-record{grid-row:1;grid-column:2}#list-staff .card button.del{grid-row:2;grid-column:2}#list-staff .card [data-rv-open]{grid-row:3;grid-column:2}}
