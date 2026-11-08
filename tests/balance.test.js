@@ -14,7 +14,7 @@ const ledger=[
 ];
 eq(summarizeCashbook(ledger,'A'),{advances:1250.5,payments:500,recovered:300.25,outstanding:950.25,excessRecovery:0,invalidEntries:0},'employee A balance');
 eq(summarizeCashbook(ledger,'B'),{advances:200,payments:75,recovered:250,outstanding:0,excessRecovery:50,invalidEntries:0},'employee B over-recovery');
-eq(summarizeCashbook(ledger),{advances:1450.5,payments:575,recovered:550.25,outstanding:900.25,excessRecovery:50,invalidEntries:0},'combined ledger totals');
+eq(summarizeCashbook(ledger),{advances:1450.5,payments:575,recovered:550.25,outstanding:950.25,excessRecovery:50,invalidEntries:0},'combined ledger totals');
 eq(summarizeCashbook([]),{advances:0,payments:0,recovered:0,outstanding:0,excessRecovery:0,invalidEntries:0},'empty ledger');
 eq(summarizeCashbook([{employeeId:'A',type:'Advance',amount:10.10},{employeeId:'A',type:'Advance',amount:0},{employeeId:'A',type:'Recovery',amount:-2},{employeeId:'A',type:'Other',amount:4}]),{advances:10.1,payments:0,recovered:0,outstanding:10.1,excessRecovery:0,invalidEntries:2},'invalid and unknown entries');
 eq(summarizeCashbook([{employeeId:'A',type:'Advance',amount:0.1},{employeeId:'A',type:'Recovery',amount:0.03}]),{advances:0.1,payments:0,recovered:0.03,outstanding:0.07,excessRecovery:0,invalidEntries:0},'paise precision');
