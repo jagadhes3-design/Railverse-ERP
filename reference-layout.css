@@ -137,3 +137,17 @@
  body.rv-profile-open #rv-bottom [data-rv-tab="projects"],body.rv-profile-open #rv-bottom [data-rv-extra="settings"]{display:none}
  body.rv-profile-open #rv-bottom [data-rv-tab="staff"]{display:flex}
 }
+
+@media(max-width:650px){
+ .rv-mobile-title-row{gap:9px;min-height:52px}
+ .rv-mobile-logo{display:block;width:46px;height:46px;flex:0 0 46px;object-fit:contain;background:#fff;border:1px solid #d8e4f1;border-radius:50%;padding:2px}
+ #rv-mobile-title{font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+ #list-staff .rv-staff-row{grid-template-columns:52px minmax(0,1fr);gap:8px;padding:12px 6px;min-height:0}
+ #list-staff .rv-avatar{width:48px;height:48px;font-size:22px}
+ #list-staff .rv-staff-main{grid-column:2;grid-row:1;display:flex;flex-direction:column;gap:3px;min-width:0}
+ #list-staff .rv-staff-main .rv-employee-name{font-size:16px}
+ #list-staff .rv-pay-badge{align-self:flex-start;padding:5px 9px;font-size:11px}
+ #list-staff .rv-staff-actions{grid-column:1/-1;display:flex;gap:8px;border-top:1px solid var(--rv-line);padding-top:8px;margin-top:2px}
+ #list-staff .rv-staff-actions button{flex:1;min-height:38px;border:0;border-radius:9px;background:#e8f2fb;color:#145c9b;font-weight:750}
+ #list-staff .rv-staff-actions button.del{background:#fff0f0;color:#b42318}
+}
