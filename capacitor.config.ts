@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'com.railverse.signallingworks',
-  appName: 'RVS ERS',
+  appName: 'RVS ERP',
   webDir: 'www',
   android: { allowMixedContent: false },
   server: { androidScheme: 'https' }
