@@ -78,3 +78,5 @@ html[data-rv-theme="dark"] body{background:#101827;color:#e7edf5}html[data-rv-th
 .brand-logo{width:46px;height:46px;max-width:46px;flex:0 0 46px;object-fit:contain;object-position:center;border-radius:50%}
 .login-card>img{width:142px;height:142px;object-fit:contain;object-position:center;margin:0 auto 18px}
 .login-card{text-align:left}
+
+.rv-search-label{margin:0 0 14px;display:block}.rv-search-label input{border-radius:12px;background:#f1f1f8;border:0;padding:14px 16px;font-size:14px}
