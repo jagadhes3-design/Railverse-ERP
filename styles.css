@@ -11,3 +11,5 @@ main{padding-bottom:100px}.rv-calendar{display:grid;grid-template-columns:repeat
 .rv-p{background:#e4f6eb!important;color:#16743b!important;border-color:#a9dfbc!important}.rv-a{background:#fde8e8!important;color:#b42318!important;border-color:#f3b5b5!important}.rv-off{background:#edf0f4!important;color:#596579!important;border-color:#d3d9e2!important}
 .rv-legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;font-size:11px;font-weight:700}.rv-legend span{padding:5px 8px;border-radius:6px}
 html[data-rv-theme="dark"] body{background:#101827;color:#e7edf5}html[data-rv-theme="dark"] .panel,html[data-rv-theme="dark"] .card,html[data-rv-theme="dark"] #rv-bottom{background:#1c293b;color:#e7edf5;border-color:#34445a}html[data-rv-theme="dark"] nav{background:#1c293b}html[data-rv-theme="dark"] input,html[data-rv-theme="dark"] select{background:#142033;color:#e7edf5;border-color:#46566c}html[data-rv-theme="dark"] #rv-bottom button{color:#d5dfeb}
+
+.brand-logo{width: min(260px,62vw);height:48px;object-fit:contain;object-position:left center}.brand-logo{flex-shrink:0}header{gap:12px}#rv-report-format{min-width:140px}
