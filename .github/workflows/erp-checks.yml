@@ -21,6 +21,7 @@ jobs:
           node --check register-layout.js
           node --check sw.js
           node --check scripts/prepare-web.js
+          python3 -m py_compile scripts/configure-android-launcher.py
       - name: Verify secure cloud schema and attendance features
         run: |
           test -f register-layout.css
@@ -39,6 +40,9 @@ jobs:
           grep -q "data-cash-edit" enhancements.js
           grep -q "data-cash-delete" enhancements.js
           grep -q "railverse-logo.svg" .github/workflows/android-apk.yml
+          grep -q "configure-android-launcher.py" .github/workflows/android-apk.yml
+          grep -q "requestPinShortcut" scripts/configure-android-launcher.py
+          grep -q "MAIN/LAUNCHER" scripts/configure-android-launcher.py
           node -e "const fs=require('fs');const s=fs.readFileSync('.github/workflows/android-apk.yml','utf8');if(s.indexOf('npx cap sync android')>s.indexOf('Apply official RVS launcher icon'))process.exit(1)"
       - name: Build web assets and verify all required files
         run: |
