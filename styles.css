@@ -13,3 +13,5 @@ main{padding-bottom:100px}.rv-calendar{display:grid;grid-template-columns:repeat
 html[data-rv-theme="dark"] body{background:#101827;color:#e7edf5}html[data-rv-theme="dark"] .panel,html[data-rv-theme="dark"] .card,html[data-rv-theme="dark"] #rv-bottom{background:#1c293b;color:#e7edf5;border-color:#34445a}html[data-rv-theme="dark"] nav{background:#1c293b}html[data-rv-theme="dark"] input,html[data-rv-theme="dark"] select{background:#142033;color:#e7edf5;border-color:#46566c}html[data-rv-theme="dark"] #rv-bottom button{color:#d5dfeb}
 
 .brand-logo{width: min(260px,62vw);height:48px;object-fit:contain;object-position:left center}.brand-logo{flex-shrink:0}header{gap:12px}#rv-report-format{min-width:140px}
+
+.rv-leave{background:#fff2d9!important;color:#8a5a00!important;border-color:#f0d18b!important}
