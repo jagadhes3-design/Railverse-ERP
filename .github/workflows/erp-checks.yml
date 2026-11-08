@@ -18,9 +18,14 @@ jobs:
           node --check app.js
           node --check auth.js
           node --check enhancements.js
+          node --check register-layout.js
           node --check sw.js
       - name: Verify secure cloud schema and attendance features
         run: |
+          test -f register-layout.css
+          grep -q "register-layout.css" scripts/prepare-web.js
+          grep -q "register-layout.js" scripts/prepare-web.js
+          grep -q "register-layout.css" index.html
           test -f supabase/schema.sql
           grep -q "enable row level security" supabase/schema.sql
           grep -q "owner_id = auth.uid()" supabase/schema.sql
