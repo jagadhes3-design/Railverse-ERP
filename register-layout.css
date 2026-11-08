@@ -1,0 +1,27 @@
+/* Spreadsheet-inspired registers for Rail verse signalling works ERP */
+.heading{margin-bottom:12px}
+#list-staff.list,#list-projects.list{display:grid;grid-template-columns:1fr;gap:8px}
+#list-staff .card{display:grid;grid-template-columns:minmax(150px,1.3fr) minmax(110px,1fr) minmax(130px,1fr) auto auto;align-items:center;gap:8px 14px;padding:12px 14px;border-radius:9px;box-shadow:none;border-color:#dce5ef;border-left:4px solid #258b86}
+#list-staff .card b,#list-staff .card small{margin:0;min-width:0;overflow-wrap:anywhere}
+#list-staff .card small:nth-of-type(1){color:#51647b}
+#list-staff .card small:nth-of-type(2){color:#176b68;font-weight:700}
+#list-staff .card button{padding:8px 10px;border-radius:7px;background:#e8f2fb}
+#list-staff .card button.del{background:#fff0f0}
+#list-projects .rv-project-card{border-left:4px solid #1768ac}
+#list-projects .rv-project-actions{padding:0 14px 12px}
+#list-projects .rv-project-actions button{padding:7px 10px;border-radius:7px;background:#e8f2fb}
+#list-projects .rv-project-actions button.del{background:#fff0f0}
+.rv-search-label{display:block;margin:0 0 12px}
+.rv-search-label input{width:100%;background:#fff;border:1px solid #dce5ef}
+.rv-register-head{display:grid;grid-template-columns:minmax(150px,1.3fr) minmax(110px,1fr) minmax(130px,1fr) auto auto;gap:8px 14px;padding:8px 14px;color:#60738a;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}
+@media(max-width:650px){
+ #list-staff .card{grid-template-columns:minmax(0,1fr) auto;gap:5px 10px;padding:12px}
+ #list-staff .card b{grid-column:1}
+ #list-staff .card small{grid-column:1}
+ #list-staff .card button{grid-row:1;grid-column:2}
+ #list-staff .card button.del{grid-row:2;grid-column:2}
+ #list-staff .card small:nth-of-type(2){grid-column:1}
+ .rv-register-head{display:none}
+}
+html[data-rv-theme="dark"] #list-staff .card,html[data-rv-theme="dark"] #list-projects .rv-project-card{background:#1c293b;border-color:#34445a}
+html[data-rv-theme="dark"] .rv-search-label input{background:#142033;color:#e7edf5;border-color:#46566c}
