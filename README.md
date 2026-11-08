@@ -1,20 +1,18 @@
-# Railverse ERP Mobile PWA MVP
+# Railverse ERP Mobile PWA – v0.3 Staff & Payroll MVP
 
-Responsive Chrome-installable web app for Android and desktop.
-
-## Features in this MVP
-- Dashboard and mobile navigation
-- Project/site records
-- Employee register
-- Attendance entry with GPS capture and selfie capture/selection
-- Material received, utilised and balance tracking
-- Expense register
-- JSON backup/restore and CSV export
-- IndexedDB storage and cached app shell for offline launch
-
-## Run for local testing
-From this folder run `python3 -m http.server 8080`, then open `http://localhost:8080`.
-For Android installation, deploy these files to an HTTPS web server, open the URL in Chrome, then Chrome menu > Install app / Add to Home screen.
+## Added in v0.3
+- Employee pay basis: monthly salary or daily wages
+- Monthly salary and daily wage rate fields in employee register
+- Payroll generation using attendance: Present = 1 day, Half Day = 0.5 day; Absent and Leave are not counted as payable days
+- Monthly salary pro-rated by calendar days in the selected month; daily wages calculated from payable days
+- Extra pay, deductions and advance recovery inputs
+- Salary register and monthly attendance/salary/staff CSV reports
+- IndexedDB schema upgraded to version 2; existing browser records are retained during normal upgrade
 
 ## Important limitations
-This MVP stores data in the current browser/device only. It is NOT connected to the central PostgreSQL server and does not yet include multi-user login, roles, server synchronisation, supervisor approval, secure selfie upload, audit logs or tamper-resistant attendance. GPS coordinates are device-provided and not proof of presence. Do not use as the official company record system until the server backend and security controls are implemented and tested.
+This remains a local-device prototype. Data is not shared between staff phones, there is no login/role security, no central server sync, and no protected payroll access. Do not enter real employee salary or bank details or use this as an official payroll system until central authentication, server database, access controls, audit trail, HTTPS and backups are deployed.
+
+GPS is device-reported and is not proof of attendance. Attendance and salary calculations must be reviewed and approved by an authorized person before payment.
+
+## Deploy
+Upload the contents of this folder (including the `assets` folder) to the root of your GitHub Pages branch. Enable GitHub Pages from `main` / root. Use HTTPS.
