@@ -16,3 +16,5 @@ html[data-rv-theme="dark"] body{background:#101827;color:#e7edf5}html[data-rv-th
 @media(max-width:420px){header{padding:0 9px;gap:7px}.brand-logo{width: min(140px,40vw);height:36px;flex-basis:min(140px,40vw)}header b{font-size:11px;letter-spacing:.5px}header small{display:none}header span{font-size:10px}}
 
 .rv-leave{background:#fff2d9!important;color:#8a5a00!important;border-color:#f0d18b!important}
+
+.rv-half{background:#fff4d6!important;color:#8a5a00!important;border-color:#f1d28a!important}.rv-leave{background:#e9e7ff!important;color:#5144a3!important;border-color:#c8c1ff!important}
