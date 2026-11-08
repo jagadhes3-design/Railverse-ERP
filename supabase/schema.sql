@@ -3,7 +3,7 @@
 create table if not exists public.rv_records (
   id uuid primary key,
   owner_id uuid not null references auth.users(id) on delete cascade,
-  table_name text not null check (table_name in ('projects','staff','attendance','materials','expenses','payroll')),
+  table_name text not null check (table_name in ('projects','staff','attendance','materials','expenses','payroll','cashbook')),
   data jsonb not null,
   updated_at timestamptz not null default now()
 );
