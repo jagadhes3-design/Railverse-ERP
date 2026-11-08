@@ -55,3 +55,21 @@ html[data-rv-theme="dark"] body{background:#101827;color:#e7edf5}html[data-rv-th
 .rv-site-labour-right .rv-site-labour-status{font-weight:700;color:#1768ac}
 .rv-project-actions{display:flex;gap:8px;padding:0 12px 12px}
 .rv-project-actions button{font-size:11px}
+
+/* Daily attendance layout */
+.rv-att-day-panel{max-width:none;margin-bottom:14px;padding:12px}
+.rv-att-day-panel>label{max-width:240px;margin:0 0 10px}
+.rv-att-day-summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.rv-att-day-summary>div{background:#f0f3fb;border-radius:10px;padding:10px 5px;text-align:center;min-width:0}
+.rv-att-day-summary b{display:block;font-size:18px;color:#18244b;overflow-wrap:anywhere}
+.rv-att-day-summary small{display:block;color:#69758b;font-size:10px;margin-top:3px}
+.rv-quick-status{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.rv-quick-status button{min-width:43px;border:1px solid #cbd2df;border-radius:9px;background:#fff;padding:8px 10px;font-size:11px;font-weight:700;color:#4c5567}
+.rv-quick-status button.active{outline:2px solid #202c78;border-color:#202c78;background:#e7eaff;color:#17245f}
+.rv-quick-status .rv-mark-p.active{background:#d9f4e1;color:#16803d;border-color:#8fd4a5}
+.rv-quick-status .rv-mark-a.active{background:#ffe0e0;color:#bb2525;border-color:#f1aaaa}
+.rv-quick-status .rv-mark-off.active{background:#e9e8f8;color:#565a76;border-color:#c5c4e8}
+.rv-quick-status .rv-mark-half.active{background:#fff0d9;color:#9a5b00;border-color:#f1d29a}
+.rv-quick-status .rv-mark-leave.active{background:#eeeaff;color:#5a48a8;border-color:#cbc1ff}
+@media(max-width:420px){.rv-att-day-summary{gap:4px}.rv-att-day-summary>div{padding:8px 2px}.rv-att-day-summary b{font-size:15px}.rv-att-day-summary small{font-size:9px}.rv-quick-status button{padding:8px 9px}}
+@media(max-width:650px){#rv-bottom{grid-template-columns:repeat(5,1fr)}}
