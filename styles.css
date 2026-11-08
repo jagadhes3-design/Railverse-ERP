@@ -73,3 +73,8 @@ html[data-rv-theme="dark"] body{background:#101827;color:#e7edf5}html[data-rv-th
 .rv-quick-status .rv-mark-leave.active{background:#eeeaff;color:#5a48a8;border-color:#cbc1ff}
 @media(max-width:420px){.rv-att-day-summary{gap:4px}.rv-att-day-summary>div{padding:8px 2px}.rv-att-day-summary b{font-size:15px}.rv-att-day-summary small{font-size:9px}.rv-quick-status button{padding:8px 9px}}
 @media(max-width:650px){#rv-bottom{grid-template-columns:repeat(5,1fr)}}
+
+/* Use the supplied circular RVS mark without cropping or stretching */
+.brand-logo{width:46px;height:46px;max-width:46px;flex:0 0 46px;object-fit:contain;object-position:center;border-radius:50%}
+.login-card>img{width:142px;height:142px;object-fit:contain;object-position:center;margin:0 auto 18px}
+.login-card{text-align:left}
