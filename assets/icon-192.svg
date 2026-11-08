@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="#142b4a"/><rect x="58" y="70" width="72" height="372" rx="24" fill="#0c1d34" stroke="#9bb1c9" stroke-width="8"/><circle cx="94" cy="145" r="29" fill="#ef4444" stroke="#fff" stroke-width="5"/><circle cx="94" cy="256" r="29" fill="#fbc02d" stroke="#fff" stroke-width="5"/><circle cx="94" cy="367" r="29" fill="#43a047" stroke="#fff" stroke-width="5"/><text x="155" y="306" font-family="Arial,sans-serif" font-size="190" font-weight="900" letter-spacing="-15"><tspan fill="#ef4444">R</tspan><tspan fill="#fbc02d">V</tspan><tspan fill="#43a047">S</tspan></text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Railverse Signalling Works app icon">
+<rect width="512" height="512" rx="104" fill="#142b4a"/>
+<rect x="44" y="72" width="82" height="326" rx="25" fill="#0c1d34" stroke="#9bb1c9" stroke-width="8"/>
+<circle cx="85" cy="145" r="28" fill="#e53935" stroke="#fff" stroke-width="5"/>
+<circle cx="85" cy="235" r="28" fill="#fbc02d" stroke="#fff" stroke-width="5"/>
+<circle cx="85" cy="325" r="28" fill="#43a047" stroke="#fff" stroke-width="5"/>
+<text x="145" y="290" font-family="Arial,sans-serif" font-size="174" font-weight="900" letter-spacing="-17"><tspan fill="#ef4444">R</tspan><tspan fill="#fbc02d">V</tspan><tspan fill="#43a047">S</tspan></text>
+<text x="256" y="366" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="800" letter-spacing="4">RAILVERSE</text>
+<text x="256" y="402" text-anchor="middle" fill="#9ec8e8" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="2">SIGNALLING WORKS</text>
+</svg>
