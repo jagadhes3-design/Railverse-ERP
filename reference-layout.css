@@ -131,3 +131,9 @@
 @media(min-width:651px){
  #rv-mobile-header,#rv-fab{display:none!important}
 }
+
+@media(max-width:650px){
+ body.rv-profile-open #rv-bottom{grid-template-columns:repeat(3,minmax(0,1fr))}
+ body.rv-profile-open #rv-bottom [data-rv-tab="projects"],body.rv-profile-open #rv-bottom [data-rv-extra="settings"]{display:none}
+ body.rv-profile-open #rv-bottom [data-rv-tab="staff"]{display:flex}
+}
