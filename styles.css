@@ -32,3 +32,26 @@ html[data-rv-theme="dark"] body{background:#101827;color:#e7edf5}html[data-rv-th
 #loginMessage{min-height:18px;font-size:12px;margin:4px 0}#loginMessage.error{color:#b42318}#loginMessage.success{color:#16743b}
 .rv-logout{margin-left:4px;padding:7px 9px;font-size:11px}.rv-user-email{font-size:10px;color:#d8e5f2;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(max-width:520px){.rv-user-email{display:none}.rv-logout{padding:6px;font-size:10px}}
+
+
+/* Expandable site cards with labour and daily attendance summary */
+.rv-project-card{padding:0;overflow:hidden}
+.rv-project-details>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px}
+.rv-project-details>summary::-webkit-details-marker{display:none}
+.rv-project-summary{display:grid;gap:5px;min-width:0}
+.rv-project-summary>b{font-size:15px}
+.rv-project-summary>small{font-size:11px;color:#718096}
+.rv-project-stats{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.rv-project-stats>span{font-size:10px;color:#526276;background:#f1f5f9;border-radius:7px;padding:5px 7px}
+.rv-project-stats b{color:#183b5b}
+.rv-project-details[open] .rv-site-arrow{transform:rotate(180deg)}
+.rv-site-labour-list-wrap{padding:0 12px 10px}
+.rv-site-labour-list{display:grid;gap:0;border-top:1px solid #e8edf3}
+.rv-site-labour-person{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 2px;border-bottom:1px solid #edf1f5}
+.rv-site-labour-person>span:first-child{display:grid;gap:3px;min-width:0}
+.rv-site-labour-person b{font-size:12px}
+.rv-site-labour-person small{font-size:10px;color:#718096}
+.rv-site-labour-right{display:grid;text-align:right;gap:4px;flex-shrink:0}
+.rv-site-labour-right .rv-site-labour-status{font-weight:700;color:#1768ac}
+.rv-project-actions{display:flex;gap:8px;padding:0 12px 12px}
+.rv-project-actions button{font-size:11px}
