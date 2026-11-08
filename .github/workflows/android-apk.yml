@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: 20
       - run: npm install
+      - run: npm install -D typescript
       - run: npm run build
       - run: npx cap add android
       - run: npx cap sync android
