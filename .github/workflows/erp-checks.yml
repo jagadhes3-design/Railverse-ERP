@@ -20,6 +20,7 @@ jobs:
           node --check enhancements.js
           node --check register-layout.js
           node --check sw.js
+          node --check scripts/prepare-web.js
       - name: Verify secure cloud schema and attendance features
         run: |
           test -f register-layout.css
@@ -32,3 +33,18 @@ jobs:
           grep -q "rv_records" app.js
           grep -q "data-quick-att" app.js
           grep -q "attQuickDate" index.html
+          grep -q "rv-edit-record" app.js
+          grep -q "data-quick-att" app.js
+          grep -q "rv-cash-employee-balances" enhancements.js
+          grep -q "data-cash-edit" enhancements.js
+          grep -q "data-cash-delete" enhancements.js
+          grep -q "railverse-logo.svg" .github/workflows/android-apk.yml
+          node -e "const fs=require('fs');const s=fs.readFileSync('.github/workflows/android-apk.yml','utf8');if(s.indexOf('npx cap sync android')>s.indexOf('Apply official RVS launcher icon'))process.exit(1)"
+      - name: Build web assets and verify all required files
+        run: |
+          npm install
+          npm run build
+          test -f www/index.html
+          test -f www/register-layout.css
+          test -f www/register-layout.js
+          test -f www/assets/railverse-logo.svg
