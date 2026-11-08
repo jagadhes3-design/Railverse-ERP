@@ -18,6 +18,8 @@ jobs:
           node --check app.js
           node --check auth.js
           node --check enhancements.js
+          node --check balance-utils.js
+          node tests/balance.test.js
           node --check register-layout.js
           node --check sw.js
           node --check scripts/prepare-web.js
@@ -51,4 +53,5 @@ jobs:
           test -f www/index.html
           test -f www/register-layout.css
           test -f www/register-layout.js
+          test -f www/balance-utils.js
           test -f www/assets/railverse-logo.svg
