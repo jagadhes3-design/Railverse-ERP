@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const root = process.cwd();
 const out = path.join(root, 'www');
-const files = ['index.html','styles.css','app.js','auth.js','supabase-config.js','enhancements.js','register-layout.css','register-layout.js','manifest.webmanifest','sw.js'];
+const files = ['index.html','styles.css','app.js','auth.js','supabase-config.js','enhancements.js','balance-utils.js','register-layout.css','register-layout.js','manifest.webmanifest','sw.js'];
 const dirs = ['assets','supabase'];
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
