@@ -10,6 +10,8 @@ on:
       - 'auth.js'
       - 'supabase-config.js'
       - 'enhancements.js'
+      - 'register-layout.css'
+      - 'register-layout.js'
       - 'assets/**'
       - 'supabase/**'
       - 'package.json'
