@@ -1,0 +1,29 @@
+name: Railverse ERP checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check auth.js
+          node --check enhancements.js
+          node --check sw.js
+      - name: Verify secure cloud schema and attendance features
+        run: |
+          test -f supabase/schema.sql
+          grep -q "enable row level security" supabase/schema.sql
+          grep -q "owner_id = auth.uid()" supabase/schema.sql
+          grep -q "rv_records" app.js
+          grep -q "data-quick-att" app.js
+          grep -q "attQuickDate" index.html
