@@ -33,7 +33,7 @@ java_dir = Path("android/app/src/main/java/com/railverse/signallingworks")
 java_dir.mkdir(parents=True, exist_ok=True)
 (java_dir / "MainActivity.java").write_text("""package com.railverse.signallingworks;
 
-import android.app.ShortcutInfo;
+import android.content.pm.ShortcutInfo;
 import android.content.Intent;
 import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
