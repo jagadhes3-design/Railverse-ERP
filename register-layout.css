@@ -18,8 +18,9 @@
  #list-staff .card{grid-template-columns:minmax(0,1fr) auto;gap:5px 10px;padding:12px}
  #list-staff .card b{grid-column:1}
  #list-staff .card small{grid-column:1}
- #list-staff .card button{grid-row:1;grid-column:2}
+ #list-staff .card .rv-edit-record{grid-row:1;grid-column:2}
  #list-staff .card button.del{grid-row:2;grid-column:2}
+ #list-staff .card [data-rv-open]{grid-row:3;grid-column:2}
  #list-staff .card small:nth-of-type(2){grid-column:1}
  .rv-register-head{display:none}
 }
