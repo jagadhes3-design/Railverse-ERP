@@ -13,6 +13,7 @@ Mobile-first attendance, labour allocation, employee profiles, cashbook and payr
 - Employee monthly attendance calendar and history.
 - Salary statement generation, extra pay, deductions, advance recovery and paid/unpaid status.
 - Employee cashbook entries stored in the same secured cloud table.
+- Settings option to migrate older records from this phone's IndexedDB into Supabase without overwriting cloud rows with matching IDs.
 - Attendance, staff and salary reports with PDF/Excel export.
 
 ## Required one-time Supabase setup
