@@ -83,3 +83,5 @@ html[data-rv-theme="dark"] body{background:#101827;color:#e7edf5}html[data-rv-th
 
 /* Match the compact mobile navigation in the supplied attendance-app reference */
 @media(max-width:650px){#tabs{display:none!important}#rv-bottom{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;padding:8px 8px max(8px,env(safe-area-inset-bottom));background:#f8f8fd}#rv-bottom button{min-height:58px;border-radius:17px;padding:7px 3px;font-size:10px}#rv-bottom button.active{background:#dfe4ff;color:#10102b;font-weight:800}#rv-bottom svg{width:23px;height:23px}body{background:#f8f8fd;color:#1c1c27}header{background:#100f29}main{padding-bottom:112px}}
+
+.rv-employee-name{display:block;width:100%;padding:0;margin:0 0 6px;border:0;background:transparent;color:#1768ac;text-align:left;font:inherit;font-weight:800;cursor:pointer}.rv-employee-name:focus-visible{outline:2px solid #1768ac;outline-offset:3px;border-radius:4px}.rv-employee-name:hover{text-decoration:underline}
