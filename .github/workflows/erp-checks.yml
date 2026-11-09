@@ -20,6 +20,7 @@ jobs:
           node --check enhancements.js
           node --check balance-utils.js
           node tests/balance.test.js
+          node tests/ist-date.test.js
           node --check register-layout.js
           node --check sw.js
           node --check scripts/prepare-web.js
