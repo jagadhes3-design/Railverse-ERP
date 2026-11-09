@@ -69,7 +69,7 @@ function card(title,sub,id,t,tag='',colourKey=id,recordId=id){
 document.addEventListener('click',async event=>{
  const editButton=event.target.closest?.('[data-edit]');
  if(editButton){
-  event.preventDefault();editButton.closest('details')?.removeAttribute('open');
+  event.preventDefault();event.stopPropagation();editButton.closest('details')?.removeAttribute('open');
   const [table,id]=editButton.dataset.edit.split('|');
   try{const record=(await all(table)).find(row=>row.id===id);if(!record)throw new Error('Record not found. Refresh the list and try again.');await add(table,record)}
   catch(error){console.error('Record edit failed',error);toast('Edit failed: '+(error.message||error))}
@@ -77,14 +77,14 @@ document.addEventListener('click',async event=>{
  }
  const deleteButton=event.target.closest?.('[data-del]');
  if(deleteButton){
-  event.preventDefault();const [table,id]=deleteButton.dataset.del.split('|');
+  event.preventDefault();event.stopPropagation();const [table,id]=deleteButton.dataset.del.split('|');
   if(!table||!id)return toast('Record ID is missing. Refresh the list and try again.');
   if(!confirm('Delete this record? This cannot be undone.'))return;
   deleteButton.disabled=true;
   try{await del(table,id);toast('Record deleted successfully')}
   catch(error){console.error('Record delete failed',error);toast('Delete failed: '+(error.message||error));deleteButton.disabled=false}
  }
-});
+},true);
 function csvDownload(name,rows){if(!rows.length)return toast('No records for this report');let keys=[...new Set(rows.flatMap(Object.keys))],csv=[keys.map(k=>'\"'+k.replace(/\"/g,'\"\"')+'\"').join(','),...rows.map(r=>keys.map(k=>'"'+String(typeof r[k]==='object'?JSON.stringify(r[k]):r[k]??'').replace(/"/g,'""')+'"').join(','))].join('\n'),a=document.createElement('a'),u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.href=u;a.download=name;a.click();URL.revokeObjectURL(u)}
 async function render(){if(!db)return;const openedAttendanceSites=new Set(Array.from(document.querySelectorAll('#list-attendance .rv-site-group[open]')).map(el=>el.dataset.siteId));const loaded=await Promise.all(tables.map(async t=>{try{return await all(t)}catch(err){console.error('Railverse load failed for '+t,err);toast('Could not load '+t+': '+(err.message||err));return []}}));let [p,s,a,m,x,pay]=loaded;projectCache=p;$('nprojects').textContent=p.length;$('nstaff').textContent=s.length;$('nattendance').textContent=a.filter(v=>v.date===today()).length;$('nmaterials').textContent=m.length;$('npayroll').textContent=pay.length;
 $('list-projects').innerHTML=p.map(v=>{const members=s.filter(emp=>String(emp.site||'').trim().toLowerCase()===String(v.name||'').trim().toLowerCase()||String(emp.site||'').trim()===String(v.id)||a.some(rec=>rec.projectId===v.id&&rec.employeeId===emp.id));const siteToday=a.filter(rec=>rec.projectId===v.id&&rec.date===today());const countStatus=status=>siteToday.filter(rec=>rec.status===status).length;const labourList=members.length?`<div class="rv-site-labour-list">${members.map(emp=>{const rec=siteToday.find(q=>q.employeeId===emp.id);return `<div class="rv-site-labour-person"><span><b>${esc(emp.name)}</b><small>${esc(emp.employeeId||'')} · ${esc(emp.role||'')}</small></span><span class="rv-site-labour-right"><small>${emp.payType==='Daily wages'?'Daily wage ₹'+(emp.dailyRate||0):'Monthly ₹'+(emp.monthlySalary||0)}</small><small class="rv-site-labour-status">${rec?esc(rec.status):'Not marked'}</small></span></div>`}).join('')}</div>`:'<small class="rv-no-att">No labour assigned to this site yet.</small>';return `<article class="card rv-project-card" style="--rv-hue:${colourHue(v.id)}"><details class="rv-project-details"><summary><span class="rv-project-summary"><b>${esc(v.name)}</b><small>${esc(v.location||'')}</small><span class="rv-project-stats"><span>Labour <b>${members.length}</b></span><span>Present <b>${countStatus('Present')}</b></span><span>Half day <b>${countStatus('Half Day')}</b></span><span>Absent <b>${countStatus('Absent')}</b></span></span></span><span class="rv-site-arrow">▼</span></summary><div class="rv-site-labour-list-wrap">${labourList}</div></details><div class="rv-project-actions"><button type="button" data-edit="projects|${esc(v.id)}">Edit site</button><button type="button" class="del" data-del="projects|${esc(v._rvRecordId||v.id)}">Delete</button></div></article>`}).join('')||'<p>No projects yet.</p>';
