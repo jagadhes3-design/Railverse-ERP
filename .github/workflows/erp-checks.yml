@@ -38,6 +38,10 @@ jobs:
           grep -q "rv_records" app.js
           grep -q "data-quick-att" app.js
           grep -q "attQuickDate" index.html
+          grep -q "rv-staff-menu" app.js
+          grep -q "_rvRecordId" app.js
+          grep -q "data-edit" app.js
+          grep -q "data-del" app.js
           grep -q "rv-edit-record" app.js
           grep -q "data-quick-att" app.js
           grep -q "rv-cash-employee-balances" enhancements.js
