@@ -90,9 +90,8 @@ async function handleRecordAction(event){
  try{await del(table,id);toast('Record deleted successfully')}
  catch(error){console.error('Record delete failed',error);toast('Delete failed: '+(error.message||error));deleteButton.disabled=false}
 }
-// Pointer events are more reliable for touch menus on Android; suppress the
-// synthetic click so a single tap cannot trigger the same action twice.
-document.addEventListener('pointerup',handleRecordAction,true);
+// Use one delegated click handler. Registering pointerup as well can invoke
+// edit/delete twice because browsers synthesize a click after pointerup.
 document.addEventListener('click',handleRecordAction,true);
 
 function csvDownload(name,rows){if(!rows.length)return toast('No records for this report');let keys=[...new Set(rows.flatMap(Object.keys))],csv=[keys.map(k=>'\"'+k.replace(/\"/g,'\"\"')+'\"').join(','),...rows.map(r=>keys.map(k=>'"'+String(typeof r[k]==='object'?JSON.stringify(r[k]):r[k]??'').replace(/"/g,'""')+'"').join(','))].join('\n'),a=document.createElement('a'),u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.href=u;a.download=name;a.click();URL.revokeObjectURL(u)}
