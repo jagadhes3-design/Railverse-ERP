@@ -51,3 +51,27 @@ html[data-rv-theme="dark"] .rv-search-label input{background:#142033;color:#e7ed
 #list-staff .rv-staff-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 #list-staff .rv-staff-actions button{padding:8px 12px;border:0;border-radius:8px;background:#e8f2fb;color:#145c9b;font-weight:750}
 #list-staff .rv-staff-actions button.del{background:#fff0f0;color:#b42318}
+
+/* Three-dot labour actions, aligned with the mobile reference layout */
+#list-staff .rv-staff-menu{position:relative;justify-self:end;align-self:center}
+#list-staff .rv-staff-menu>summary{list-style:none;cursor:pointer;color:#50525e;font-size:25px;line-height:1;padding:6px;min-width:26px;text-align:center}
+#list-staff .rv-staff-menu>summary::-webkit-details-marker{display:none}
+#list-staff .rv-staff-menu>div{position:absolute;right:0;top:30px;z-index:40;min-width:120px;background:#fff;border:1px solid #e3e4ed;border-radius:12px;padding:6px;box-shadow:0 8px 24px #11112b24}
+#list-staff .rv-staff-menu>div button{display:block;width:100%;text-align:left;padding:10px 11px;border:0;border-radius:8px;background:transparent;color:#222;font-size:13px}
+#list-staff .rv-staff-menu>div button.del{color:#b42318;background:transparent}
+#list-projects .rv-project-actions button{min-height:40px;min-width:84px}
+@media(max-width:650px){
+ #list-staff .rv-staff-row{grid-template-columns:72px minmax(0,1fr) auto 28px;gap:10px;padding:15px 8px;min-height:104px}
+ #list-staff .rv-avatar{width:68px;height:68px;border:0;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0;font-size:28px;font-weight:800}
+ #list-staff .rv-staff-main{grid-column:auto;grid-row:auto;display:flex;flex-direction:column;gap:3px;min-width:0}
+ #list-staff .rv-staff-main .rv-employee-name{font-size:17px;white-space:normal;text-align:left}
+ #list-staff .rv-staff-main small{display:none}
+ #list-staff .rv-pay-badge{white-space:nowrap;align-self:center;border-radius:14px;padding:12px 10px;font-size:13px;font-weight:800}
+ #list-staff .rv-staff-menu{grid-column:4;grid-row:1}
+ #list-staff .rv-staff-menu>div{top:28px}
+}
+@media(max-width:390px){
+ #list-staff .rv-staff-row{grid-template-columns:56px minmax(0,1fr) auto 24px;gap:7px;padding-left:4px;padding-right:4px}
+ #list-staff .rv-avatar{width:52px;height:52px;font-size:24px}
+ #list-staff .rv-pay-badge{font-size:11px;padding:10px 7px}
+}
