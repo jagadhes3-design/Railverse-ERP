@@ -1,4 +1,4 @@
-const CACHE_NAME='railverse-pwa-v32';
+const CACHE_NAME='railverse-pwa-v33';
 const APP_SHELL=['./','./index.html','./styles.css','./app.js','./auth.js','./supabase-config.js','./supabase/schema.sql','./enhancements.js','./register-layout.css','./reference-layout.css','./register-layout.js','./manifest.webmanifest','./assets/icon-192.svg?v=20261109-1','./assets/icon-512.svg?v=20261109-1','./assets/railverse-logo.svg?v=20261109-1'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('railverse-pwa-')&&key!==CACHE_NAME).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
